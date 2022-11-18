@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+   <head>
+   </head>
+   <body>
+   <input id="nbr1" type="number" placeholder="Nombre 1">
+   <select name="" id="operator">
+      <option value="sum">+</option>
+      <option value="soust">-</option>
+      <option value="mult">*</option>
+      <option value="division">/</option>
+    </select>
+   <input id="nbr2" type="number" placeholder="Nombre 2"><br>
+    
+   <button onclick="calculator()">Calculer</button> = <input id="resultat" type="text" disabled>
+   <script type="text/javascript">
+      function calculator()
+      {
+            var nbr1 = document.getElementById("nbr1").value
+            var nbr2 = document.getElementById("nbr2").value
+            var operator = document.getElementById("operator").value
+            var resultat = document.getElementById("resultat")
+            
+            switch(operator) {
+            case "sum":
+               resultat.value = Number(nbr1) + Number(nbr2)
+
+               break;
+            case "soust":
+               if (nbr1 < nbr2){
+                  alert("Le premier nombre est plus petit au deuxième")
+               }
+               else{
+                  resultat.value = Number(nbr1) - Number(nbr2)
+               }
+               break;
+            case "mult":
+               resultat.value = Number(nbr1) * Number(nbr2)
+               break;
+            default:
+               if (nbr2 == 0){
+                  alert("Impossible !!!")
+                  resultat.value = 0 
+               }
+               else{
+                  resultat.value = Number(nbr1) / Number(nbr2)
+               }
+               break;
+               // code block
+         }
+      }
+   </script>
+   </body>
+</html>
